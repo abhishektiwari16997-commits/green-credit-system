@@ -1,0 +1,118 @@
+@font-face {
+  font-family: "Fraunces";
+  src: url("/assets/fonts/Fraunces.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Parisienne";
+  src: url("/assets/fonts/Parisienne.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.625rem;
+    --background: 0.951 0.013 80;
+    --foreground: 0.22 0 0;
+    --card: 1 0 0;
+    --card-foreground: 0.22 0 0;
+    --popover: 1 0 0;
+    --popover-foreground: 0.22 0 0;
+    --primary: 0.316 0.045 139;
+    --primary-foreground: 0.951 0.013 80;
+    --secondary: 0.803 0.026 79;
+    --secondary-foreground: 0.22 0 0;
+    --muted: 0.92 0.012 80;
+    --muted-foreground: 0.5 0.02 80;
+    --accent: 0.578 0.056 141;
+    --accent-foreground: 1 0 0;
+    --destructive: 0.551 0.097 33;
+    --destructive-foreground: 1 0 0;
+    --border: 0.803 0.026 79;
+    --input: 0.92 0.012 80;
+    --ring: 0.551 0.097 33;
+    --chart-1: 0.551 0.097 33;
+    --chart-2: 0.578 0.056 141;
+    --chart-3: 0.316 0.045 139;
+    --chart-4: 0.803 0.026 79;
+    --chart-5: 0.694 0.027 79;
+    --sidebar: 0.316 0.045 139;
+    --sidebar-foreground: 0.951 0.013 80;
+    --sidebar-primary: 0.551 0.097 33;
+    --sidebar-primary-foreground: 1 0 0;
+    --sidebar-accent: 0.243 0.037 139;
+    --sidebar-accent-foreground: 0.951 0.013 80;
+    --sidebar-border: 0.4 0.05 139;
+    --sidebar-ring: 0.551 0.097 33;
+
+    /* Custom brand tokens */
+    --gcs-cream: oklch(0.951 0.013 80);
+    --gcs-terracotta: oklch(0.551 0.097 33);
+    --gcs-terracotta-dark: oklch(0.493 0.097 33);
+    --gcs-olive: oklch(0.316 0.045 139);
+    --gcs-olive-dark: oklch(0.243 0.037 139);
+    --gcs-sage: oklch(0.578 0.056 141);
+    --gcs-stone: oklch(0.803 0.026 79);
+    --gcs-stone-dark: oklch(0.694 0.027 79);
+    --gcs-charcoal: oklch(0.22 0 0);
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "General Sans", system-ui, sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .font-display {
+    font-family: "Fraunces", Georgia, serif;
+  }
+
+  .font-script {
+    font-family: "Parisienne", cursive;
+  }
+
+  .font-mono-space {
+    font-family: "Space Mono", monospace;
+  }
+
+  .section-fade-in {
+    animation: fadeInUp 0.7s ease-out both;
+  }
+
+  .gcs-input {
+    @apply w-full rounded-xl border-2 border-stone-200 bg-cream px-4 py-3 text-charcoal font-mono-space text-sm focus:outline-none focus:border-terracotta transition-colors;
+  }
+
+  .gcs-label {
+    @apply block font-mono-space text-xs uppercase tracking-widest text-olive mb-2;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
